@@ -100,7 +100,7 @@ body {
   background-color: #FFF;
   margin-bottom: 30px;
   /* Stretch */
-  height: 190px;
+  height: 200px;
   overflow: hidden;
 }
 
@@ -125,7 +125,7 @@ body {
 .calendar {
   border: 1px solid black;
   width: 450px !important;
-  margin: 20px 0;
+  margin: 30px 0;
 }
 
 
