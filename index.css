@@ -115,7 +115,7 @@ body {
 .button{
   /* margin-left:200px; */
   border-radius:4px;
-  background-color: #1fc8db;
+  background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
   padding:10px 30px;
   height:fit-content;
   font-size: 1.2rem;
@@ -126,6 +126,12 @@ body {
   border: 1px solid black;
   width: 450px !important;
   margin: 30px 0;
+  padding: 20px;
+}
+
+a{
+  text-decoration: none;
+  color:black;
 }
 
 
