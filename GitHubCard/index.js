@@ -104,7 +104,7 @@ function createCard(x){
   const cusername = document.createElement('p');
   const clocation = document.createElement('p');
   const cprofile = document.createElement('p');
-  const clink = document.createElement('p');
+  const clink = document.createElement('A');
   const cfollowers = document.createElement('p');
   const cfollowing = document.createElement('p');
   const cbio = document.createElement('p');
@@ -129,12 +129,16 @@ function createCard(x){
   cusername.classList.add('username');
 
   //Content
-  cpic.setAttribute('src', x.avatar_url);
+  // cpic.setAttribute('src', x.avatar_url);
+  cpic.src = x.avatar_url;
   cname.textContent = x.name;
   cusername.textContent = x.login;
   clocation.textContent = `Location: ${x.location}`;
-  cprofile.textContent = `Profile:`;
-  clink.setAttribute('href', x.url);
+  // cprofile.textContent = `Profile:`;
+  // clink.setAttribute('href', x.url);
+  clink.href = x.html_url;
+  clink.textContent = "Profile: address to user's github page";
+  // clink.text = "address to user's github page";
   cfollowers.textContent = `Followers: ${x.followers}`;
   cfollowing.textContent = `Following: ${x.following}`;
   cbio.textContent = `Bio: ${x.bio}`;
