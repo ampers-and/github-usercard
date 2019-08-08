@@ -2,6 +2,16 @@
            (replacing the palceholder with your Github name):
            https://api.github.com/users/<your name>
 */
+axios.get('https://api.github.com/users/ampers-and')
+  .then( response => {
+    const cards = document.querySelector('.cards');
+    const card = createCard(response.data);
+    cards.appendChild(card);
+  })
+
+  .catch( err => {
+    console.log ('Error', err);
+  })
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
