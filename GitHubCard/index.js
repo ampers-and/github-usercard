@@ -10,7 +10,7 @@ axios.get('https://api.github.com/users/ampers-and')
   })
 
   .catch( err => {
-    console.log ('Error', err);
+    console.log ('User Get Error', err);
   })
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
@@ -46,9 +46,33 @@ followersArray.forEach(a => {
   })
 
   .catch( err => {
-    console.log ('Error', err);
+    console.log ('Instructor Get Error', err);
   })
 })
+
+//Stretch
+axios.get('https://api.github.com/users/ampers-and/followers')
+  .then(response => {
+    const cards = document.querySelector('.cards');
+    response.data.forEach(a => {
+
+      axios.get(`https://api.github.com/users/${a.login}`)
+        .then( resp => {
+          const gcard = createCard(resp.data);
+          cards.appendChild(gcard);
+        })
+
+        .catch( err => {
+          console.log ('Follower Info Get Error', err);
+        })
+
+    })
+  })
+
+  .catch( err => {
+    console.log ('Follower Get Error', err);
+  })
+
 
 
 /* Step 3: Create a function that accepts a single object as its only argument,
