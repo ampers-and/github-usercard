@@ -99,7 +99,36 @@ body {
   box-shadow: 0 1px 6px -2px #000;
   background-color: #FFF;
   margin-bottom: 30px;
+  /* Stretch */
+  height: 190px;
+  overflow: hidden;
 }
+
+/* Stretch */
+.card-open{
+  height: fit-content;
+}
+
+.card-info{
+  width: 450px;
+}
+.button{
+  /* margin-left:200px; */
+  border-radius:4px;
+  background-color: #1fc8db;
+  padding:10px 30px;
+  height:fit-content;
+  font-size: 1.2rem;
+  color:white;
+}
+
+.calendar {
+  border: 1px solid black;
+  width: 450px !important;
+  margin: 20px 0;
+}
+
+
 
 .card img {
   width: 150px;

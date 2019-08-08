@@ -108,6 +108,7 @@ function createCard(x){
   const cfollowers = document.createElement('p');
   const cfollowing = document.createElement('p');
   const cbio = document.createElement('p');
+  
 
   //Structure
   card.appendChild(cpic);
@@ -142,6 +143,22 @@ function createCard(x){
   cfollowers.textContent = `Followers: ${x.followers}`;
   cfollowing.textContent = `Following: ${x.following}`;
   cbio.textContent = `Bio: ${x.bio}`;
+
+  //Stretch
+  const button = document.createElement('span');
+  button.classList.add('button');
+  card.appendChild(button);
+  button.textContent = `More`;
+  button.addEventListener('click', () => {
+    card.classList.toggle('card-open');
+  });
+
+  //Calendar Stretch
+  const calendar = document.createElement('img');
+  calendar.classList.add('calendar');
+  cinfo.appendChild(calendar);
+  calendar.src = `https://gist.github.com.ru/jcouyang/6336168ecbbf4fbdc46e.svg?username=${x.login}&width=400&height=60`;
+
 
   return card;
 }
