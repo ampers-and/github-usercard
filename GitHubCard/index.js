@@ -5,8 +5,8 @@
 axios.get('https://api.github.com/users/ampers-and')
   .then( response => {
     const cards = document.querySelector('.cards');
-    const card = createCard(response.data);
-    cards.appendChild(card);
+    const gcard = createCard(response.data);
+    cards.appendChild(gcard);
   })
 
   .catch( err => {
@@ -53,8 +53,55 @@ const followersArray = [];
     <p>Bio: {users bio}</p>
   </div>
 </div>
-
 */
+
+function createCard(x){
+
+  //New Elements
+  const card = document.createElement('div');
+  const cpic = document.createElement('img');
+  const cinfo = document.createElement('div');
+  const cname = document.createElement('h3');
+  const cusername = document.createElement('p');
+  const clocation = document.createElement('p');
+  const cprofile = document.createElement('p');
+  const clink = document.createElement('p');
+  const cfollowers = document.createElement('p');
+  const cfollowing = document.createElement('p');
+  const cbio = document.createElement('p');
+
+  //Structure
+  card.appendChild(cpic);
+  card.appendChild(cinfo);
+  cinfo.appendChild(cname);
+  cinfo.appendChild(cusername);
+  cinfo.appendChild(clocation);
+  cinfo.appendChild(cprofile);
+  cprofile.appendChild(clink);
+  cinfo.appendChild(cfollowers);
+  cinfo.appendChild(cfollowing);
+  cinfo.appendChild(cbio);
+
+
+  //Class Names
+  card.classList.add('card');
+  cinfo.classList.add('card-info');
+  cname.classList.add('name');
+  cusername.classList.add('username');
+
+  //Content
+  cpic.setAttribute('src', x.avatar_url);
+  cname.textContent = x.name;
+  cusername.textContent = x.login;
+  clocation.textContent = `Location: ${x.location}`;
+  cprofile.textContent = `Profile:`;
+  clink.setAttribute('href', x.url);
+  cfollowers.textContent = `Followers: ${x.followers}`;
+  cfollowing.textContent = `Following: ${x.following}`;
+  cbio.textContent = `Bio: ${x.bio}`;
+
+  return card;
+}
 
 /* List of LS Instructors Github username's: 
   tetondan
